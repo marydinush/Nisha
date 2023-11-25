@@ -1,28 +1,19 @@
+#leap year
 
-
-
-
-
-
-
-class BankAccount:
-
-  def __init__(self, account_number,account_holder_name, initial _balance=0.0):
-    self.__account_number = account_number
-    self.__account_holder_name = account_holder_name
-    self .__account_balance = initial_balance
-
- def deposit(self, amount):
-   if amount > 0:
-     self.__account_balance += amount
-     #self.__account_balance = self.__account_balance+amount
-     print("Deposited ₹{}. New balance: ${}".format(amount,self.__account_balance))
-
+"""
+year % 4 == 0 &
+year % 100 !=0/
+year % 400 ==0
+"""
+def isLeapYear(year):
+   if(year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+     return True
    else:
-     print("Invalid deposit amount.please deposit a positive amount.")
-
-def withdraw (self,amount):
-  if amount > 0 and amount <= self.__account_balance:
-    self.__account_balance -= amount
-    #self.__account_balance = self.__account_balance - amount
-    print("withdrew ₹{}. New balance: ₹{}".format(amount,self.__account_balance))
+     return False
+     
+year = 2013
+  
+if  isLeapYear(year):
+    print('{} is a leap year.'. format(year))
+else:
+    print('{}is a not a leap year.'. format(year))
